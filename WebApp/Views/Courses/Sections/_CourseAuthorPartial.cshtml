@@ -1,0 +1,24 @@
+﻿@model CourseViewModel
+
+<section class="course-author">
+
+
+    <div class="container">
+        <div class="img-div">
+            <img src="@Model.CourseAuthor.Image.ImageUrl" alt="@Model.CourseAuthor.Image.AltText" />
+        </div>
+
+        <div class="content-box">
+
+            <p>Learn from the best</p>
+            <h3>@Model.CourseAuthor.Name</h3>
+            <p>@Model.CourseAuthor.Description</p>
+
+            <div class="buttons">
+                <button class="btn-theme btn-youtube"><i class="fa-brands fa-youtube"></i> @Model.CourseAuthor.YoutubeFollowersQty k subscribers</button>
+                <button class="btn-theme btn-facebook"><i class="fa-brands fa-square-facebook"></i> @Model.CourseAuthor.YoutubeFollowersQty k subscribers</button>
+            </div>
+        </div>
+    </div>
+
+</section>

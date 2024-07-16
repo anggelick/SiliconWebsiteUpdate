@@ -1,0 +1,65 @@
+﻿.newsletter {
+    background-color: $gray-100;
+    padding: 100px 0;
+
+    .container {
+        max-width: 860px;
+
+        .head {
+            display: flex;
+        }
+
+        .mid {
+            @include md {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .checkboxes {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                @include lg {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 2rem;
+                }
+
+                .checkbox {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+            }
+        }
+
+        .bottom {
+
+            .email-signup {
+                display: flex;
+                align-items: start;
+                gap: 1rem;
+
+                .registration {
+                    position: relative;
+                    width: 100%;
+
+                    input {
+                        width: 100%;
+                    }
+
+                    i {
+                        position: absolute;
+                        top: 19px;
+                        left: 10px;
+                    }
+                }
+
+                button {
+                    height: 52px;
+                }
+            }
+        }
+    }
+}

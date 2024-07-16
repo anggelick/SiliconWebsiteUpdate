@@ -1,0 +1,49 @@
+﻿@model CourseViewModel
+
+<div class="course-box">
+
+    @if (!Model.IsSaved)
+    {
+        <a class="save-course-btn" asp-action="SaveCourse" asp-controller="Courses" asp-route-id="@Model.Id">
+            <i class="fa-regular fa-bookmark"></i>
+        </a>
+    }
+    else if (Model.IsSaved)
+    {
+        <a class="save-course-btn" asp-action="SaveCourse" asp-controller="Courses" asp-route-id="@Model.Id">
+            <i class="fa-solid fa-bookmark"></i>
+        </a>
+    }
+
+    <a class="content-box" asp-controller="Courses" asp-action="Details" asp-route-id="@Model.Id">
+
+        <div class="img-div" >
+            <img src="@Model.Image.ImageUrl" alt="@Model.Image.AltText" />
+
+        </div>
+
+        <div class="text">
+
+            <h2 class="title h5">@Model.Name</h2>
+
+            <p class="author">By @Model.CourseAuthor.Name</p>
+
+            <p class="price">$@Model.Price</p>
+
+        </div>
+
+        <div class="bottom">
+
+            <div class="item">
+                <p><i class="fa-regular fa-clock"></i>@Model.HoursToComplete hours</p>
+            </div>
+
+            <div class="item">
+                <p><i class="fa-regular fa-thumbs-up"></i>@Model.LikesPercentage % (@Model.LikesAmount K)</p>
+            </div>
+
+        </div>
+
+    </a>
+
+</div>

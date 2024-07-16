@@ -1,0 +1,123 @@
+﻿.account-security {
+
+    .btn-theme {
+        min-width: 175px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include lg {
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            .account-menu {
+                align-self: start;
+            }
+        }
+
+        .account-details-forms {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                color: $theme;
+                font-weight: 700;
+            }
+
+            .input-div {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-areas: "label label" "input input" "span span";
+                padding: auto auto;
+
+                span {
+                    grid-area: span;
+                    text-align: start;
+                    min-height: 26px;
+                }
+
+                input, textarea {
+                    width: 90vw;
+                    grid-area: input;
+                    justify-self: center;
+
+                    @include lg {
+                        width: 100%;
+                    }
+                }
+
+                label {
+                    grid-area: label;
+                }
+            }
+
+            #account-security-change-password-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+                border-bottom: 1px solid #2f333b;
+                padding-bottom: 3rem;
+                margin-bottom: 2rem;
+
+                @include lg {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "span span" "cp vac1" "np cnp" "btn vac2";
+                    gap: 1rem;
+
+                    span {
+                        grid-area: span;
+                    }
+
+                    .cp {
+                        grid-area: cp;
+                    }
+
+                    .np {
+                        grid-area: np;
+                    }
+
+                    .cnp {
+                        grid-area: cnp;
+                    }
+
+                    .buttons {
+                        grid-area: btn;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
+
+            #account-security-delete-account-form {
+
+                .checkbox-div {
+                    display: flex;
+                    align-items: center;
+                    gap: .6rem;
+                }
+
+                a {
+                    max-width: 100px;
+                }
+            }
+        }
+
+        .delete-account {
+            p {
+                color: $gray-700;
+            }
+
+            .h4 {
+                color: $theme !important;
+            }
+        }
+    }
+}

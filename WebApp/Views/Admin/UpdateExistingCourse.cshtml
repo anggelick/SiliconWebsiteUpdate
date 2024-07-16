@@ -1,0 +1,104 @@
+﻿@model CreateCourseIndexViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="create-new-course">
+
+    <div class="container">
+
+        <h1>Update Existing Course</h1>
+
+        <form id="create-new-course-form" novalidate>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.Name></label>
+                <input asp-for=@Model.Form!.Name />
+                <span asp-validation-for=@Model.Form!.Name></span>
+            </div>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.Description></label>
+                <textarea asp-for=@Model.Form!.Description></textarea>
+                <span asp-validation-for=@Model.Form!.Description></span>
+            </div>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.Ingress></label>
+                <input asp-for=@Model.Form!.Ingress />
+                <span asp-validation-for=@Model.Form!.Ingress></span>
+            </div>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.Price></label>
+                <input asp-for=@Model.Form!.Price/>
+                <span asp-validation-for=@Model.Form!.Price></span>
+            </div>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.HoursToComplete></label>
+                <input asp-for=@Model.Form!.HoursToComplete />
+                <span asp-validation-for=@Model.Form!.HoursToComplete></span>
+            </div>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseCategory.Name>Course Category</label>
+                <input asp-for=@Model.Form!.CourseCategory.Name />
+                <span asp-validation-for=@Model.Form!.CourseCategory.Name></span>
+            </div>
+
+            <h2> AUTHOR </h2>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseAuthor.Name></label>
+                <input asp-for=@Model.Form!.CourseAuthor.Name />
+                <span asp-validation-for=@Model.Form!.CourseAuthor.Name></span>
+            </div>
+            
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseAuthor.Description></label>
+                <input asp-for=@Model.Form!.CourseAuthor.Description />
+                <span asp-validation-for=@Model.Form!.CourseAuthor.Description></span>
+            </div>
+            
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseAuthor.YoutubeFollowersQty></label>
+                <input asp-for=@Model.Form!.CourseAuthor.YoutubeFollowersQty />
+                <span asp-validation-for=@Model.Form!.CourseAuthor.YoutubeFollowersQty></span>
+            </div>
+            
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseAuthor.FacebookFollowersQty></label>
+                <input asp-for=@Model.Form!.CourseAuthor.FacebookFollowersQty />
+                <span asp-validation-for=@Model.Form!.CourseAuthor.FacebookFollowersQty></span>
+            </div>
+            
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.CourseAuthor.Image.ImageUrl></label>
+                <input asp-for=@Model.Form!.CourseAuthor.Image.ImageUrl />
+                <span asp-validation-for=@Model.Form!.CourseAuthor.Image.ImageUrl></span>
+            </div>
+
+            <h2> COURSE IMAGE </h2>
+
+            <div class="input-div">
+                <label asp-for=@Model.Form!.Image.ImageUrl></label>
+                <input asp-for=@Model.Form!.Image.ImageUrl />
+                <span asp-validation-for=@Model.Form!.Image.ImageUrl></span>
+            </div>
+
+
+            <div class="buttons">
+                <button asp-action="UpdateExistingCourse" asp-controller="Admin" class="btn-gray">Cancel</button>
+                <button asp-action="UpdateCourse" asp-controller="Admin" class="btn-theme">Save Changes</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

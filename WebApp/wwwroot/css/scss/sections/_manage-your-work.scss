@@ -1,0 +1,47 @@
+﻿.manage-your-work {
+    padding: 80px 0px;
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 80px;
+
+        @include lg {
+            flex-direction: row;
+        }
+
+        img {
+            max-width: 100%;
+
+            @include lg {
+                max-width: 50%;
+            }
+        }
+
+        .content-box {
+
+            h2 {
+                margin-bottom: 25px;
+            }
+
+            .bullets {
+
+                .bullet { border: 1px solid black;
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: start;
+                }
+
+                i {
+                    color: $theme;
+                    margin-right: 5px;
+                }
+            }
+
+            button {
+                margin-top: 40px;
+            }
+        }
+    }
+}

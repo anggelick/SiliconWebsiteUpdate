@@ -1,0 +1,25 @@
+﻿.not-found {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .img-div {
+            max-width: 500px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

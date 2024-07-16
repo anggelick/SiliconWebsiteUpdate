@@ -1,0 +1,128 @@
+﻿.sign-in, .sign-up {
+    @include lg {
+        margin-top: 5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            align-self: start;
+        }
+
+        p {
+            align-self: start;
+        }
+
+        #sign-in-form, #sign-up-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-content: center;
+            max-width: 530px;
+            row-gap: 1rem;
+
+            @include md {
+                width: 80%;
+            }
+
+            .checkbox-div {
+                display: flex;
+                align-items: center;
+                gap: .6rem;
+            }
+
+            .input-div {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-areas: "label " "input " "span ";
+
+                @include md {
+                    height: 85px;
+                }
+
+                span {
+                    grid-area: span;
+                    text-align: end;
+                    height: 26px;
+                }
+
+                input {
+                    width: 100%;
+                    grid-area: input;
+                }
+
+                label {
+                    grid-area: label;
+                }
+            }
+        }
+
+        #sign-up-form {
+
+            .first-name-input {
+                padding-bottom: 1rem;
+            }
+
+            @include md {
+                div {
+                    min-width: 526px;
+                }
+
+                .user-name {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .first-name-input, .last-name-input {
+                    min-width: 48% !important;
+                }
+
+                .first-name-input {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        @include md {
+            .content-box {
+                min-width: 526px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+
+        #sign-in-form {
+
+            @include md {
+                .content-box {
+                    min-width: 526px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                div {
+                    min-width: 526px;
+                }
+            }
+        }
+
+        .bottom {
+            text-align: center;
+
+            .line-top {
+                border-top: 1px solid $gray-300;
+                max-width: 530px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+﻿input, textarea, select {
+    border-radius: 10px;
+    border: 1px solid $gray-300;
+    padding-left: 1rem;
+    box-sizing: border-box;
+
+    &.placeholder-icon {
+        padding-left: 2.2rem;
+    }
+
+    &:focus {
+        border: none !important;
+        outline: 1px solid $theme;
+        @include shadow-l;
+    }
+}
+
+input, select {
+    height: 52px;
+}
+
+span {
+    grid-area: span;
+    color: $danger;
+    text-align: end;
+
+    &.input-validation-error {
+        color: $danger;
+    }
+
+    &.input-validation-valid {
+        color: $success;
+    }
+}
+
+input {
+
+    &.input-validation-error {
+        color: $danger;
+        border: 1px solid $danger;
+    }
+
+    &.input-validation-valid {
+        border: 1px solid $success;
+    }
+}
+
+textarea {
+
+    &.input-validation-error {
+        color: $danger;
+        border: 1px solid $danger;
+    }
+
+    &.input-validation-valid {
+        color: $success;
+        border: 1px solid $success;
+    }
+}
+
+label {
+    color: $gray-900;
+}
+
+.error-flag {
+    color: $danger;
+    justify-self: center;
+    background-color: #FDE8E8;
+}
+
+.success-flag {
+    color: $success;
+    justify-self: center;
+    background-color: #E8FDE8;
+}

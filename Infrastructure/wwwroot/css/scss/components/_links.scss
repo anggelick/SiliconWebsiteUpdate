@@ -1,0 +1,52 @@
+a {
+    @include standard-text;
+    color: $theme;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.menu-link {
+    @include text-nav;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus,
+    .active {
+        color: $theme;
+        text-decoration: none;
+    }
+}
+
+.account-nav-link {
+    @include text-s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+    transition: all 0.1s ease-in-out;
+    border-radius: 5px;
+
+
+    i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    &:hover {
+        background-color: $theme;
+        color: white;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+}

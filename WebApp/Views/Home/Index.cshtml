@@ -1,0 +1,29 @@
+﻿@model HomeIndexViewModel
+
+<div id="showcase">
+    @await Html.PartialAsync("~/Views/Home/Sections/_ShowcasePartial.cshtml", Model.Showcase)
+</div>
+
+<div id="features">
+    @await Html.PartialAsync("~/Views/Home/Sections/_FeaturesPartial.cshtml", Model.Features)
+</div>
+
+<div id="switch-mode">
+    @await Html.PartialAsync("~/Views/Home/Sections/_SwitchModePartial.cshtml")
+</div>
+
+<div id="manage-your-work">
+    @await Html.PartialAsync("~/Views/Home/Sections/_ManageYourWorkPartial.cshtml")
+</div>
+
+<div id="download-our-app">
+    @await Html.PartialAsync("~/Views/Home/Sections/_DownloadOurAppPartial.cshtml")
+</div>
+
+<div id="integration">
+    @await Html.PartialAsync("~/Views/Home/Sections/_IntegrationPartial.cshtml")
+</div>
+
+<div id="newsletter">
+    @await Html.PartialAsync("~/Views/Home/Sections/_NewsletterPartial.cshtml", Model.Subscriber)
+</div>

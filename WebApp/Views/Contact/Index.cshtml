@@ -1,0 +1,83 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+
+<section class="contact">
+
+    <div class="container">
+
+        <div class="text">
+
+            <h1>@Model.Title</h1>
+
+            <div class="content-box">
+
+                <div class="i-div">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <h3>Email us</h3>
+                <p>Please feel free to drop us a line. We will respond as soon as possible.</p>
+                <a href="#contact-form">Leave a message <i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+
+            <div class="content-box">
+
+                <div class="i-div">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <h3>Careers</h3>
+                <p>Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                <a href="#">Send an application <i class="fa-solid fa-arrow-right"></i></a>
+
+            </div>
+
+        </div>
+
+        <form method="post" id="contact-form" asp-controller="Contact" asp-action="Index">
+            <p class="error-flag">@Model.ErrorMessage</p>
+            <p class="success-flag">@Model.SuccessMessage</p>
+            <h2>Get In Contact With Us</h2>
+
+            <div class="input-div">
+                <label asp-for="Form.Sender"></label>
+                <span asp-validation-for="Form.Sender"></span>
+                <input asp-for="Form.Sender" />
+            </div>
+
+            <div class="input-div">
+                <label asp-for="Form.Email"></label>
+                <span asp-validation-for="Form.Email"></span>
+                <input asp-for="Form.Email" />
+            </div>
+
+            <div class="input-div">
+                <label asp-for="Form.Service"></label>
+                <select asp-for="Form.Service" class="view-filter" name="Form.Service">
+                    @foreach (var option in Model.Form.Services)
+                    {
+                        <option value=@option>@option</option>
+                    }
+                </select>
+            </div>
+
+            <div class="input-div">
+                <label asp-for="Form.Message"></label>
+                <span asp-validation-for="Form.Message"></span>
+                <textarea asp-for="Form.Message"></textarea>
+            </div>
+
+            <button class="btn-theme" type="submit">Send Contact Request</button>
+        </form>
+
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1083.8256569966622!2d-122.4068156148475!3d37.73496730615861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssv!2sse!4v1708507604140!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</section>

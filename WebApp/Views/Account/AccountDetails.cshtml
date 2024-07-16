@@ -1,0 +1,97 @@
+﻿@model AccountViewModel
+
+<sections class="account-details">
+
+    <div class="container">
+
+        @await Html.PartialAsync("~/views/account/sections/_AccountMenuPartial.cshtml", Model)
+
+        <div class="account-details-forms">
+
+            <h1 class="h3">Account Details</h1>
+
+            <p class ="h4">Basic Info</p>
+
+            <form id="account-details-basic-info-form" novalidate>
+
+                <div class="input-div">
+                    <label asp-for="@Model.FirstName"></label>
+                    <input asp-for="@Model.FirstName" />
+                    <span asp-validation-for="@Model.FirstName"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.LastName"></label>
+                    <input asp-for="@Model.LastName" />
+                    <span asp-validation-for="@Model.LastName"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.Email"></label>
+                    <input readonly asp-for="@Model.Email" />
+                    <span asp-validation-for="@Model.Email"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.PhoneNumber"></label>
+                    <input type="tel" asp-for="@Model.PhoneNumber" />
+                    <span asp-validation-for="@Model.PhoneNumber"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.Bio"></label>
+                    <textarea asp-for="@Model.Bio"></textarea>
+                    <span asp-validation-for="@Model.Bio"></span>
+                </div>
+
+                <div class="buttons">
+                    <button asp-action="AccountDetails" asp-controller="Account" class="btn-gray">Cancel</button>
+                    <button asp-action="UpdateProfile" asp-controller="Account" class="btn-theme">Save Changes</button>
+                </div>
+
+            </form>
+
+            <p class="h4">Address</p>
+
+            <form id="account-details-address-form">
+
+                <input value=@Model.FirstName asp-for=@Model.FirstName hidden />
+                <input value=@Model.LastName asp-for=@Model.LastName hidden />
+                <input value=@Model.Email asp-for=@Model.Email hidden />
+
+                <div class="input-div">
+                    <label asp-for="@Model.Address.AddressLine1"></label>
+                    <input asp-for="@Model.Address.AddressLine1" />
+                    <span asp-validation-for="@Model.Address.AddressLine1"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.Address.AddressLine2"></label>
+                    <input asp-for="@Model.Address.AddressLine2" />
+                    <span asp-validation-for="@Model.Address.AddressLine2"></span>
+                </div>
+
+                <div class="input-div">
+                    <label asp-for="@Model.Address.PostalCode"></label>
+                    <input asp-for="@Model.Address.PostalCode" />
+                    <span asp-validation-for="@Model.Address.PostalCode"></span>
+                </div>
+
+                <div class="input-div bio-textarea">
+                    <label asp-for="@Model.Address.City"></label>
+                    <input asp-for="@Model.Address.City" />
+                    <span asp-validation-for="@Model.Address.City"></span>
+                </div>
+
+                <div class="buttons">
+                    <button asp-action="AccountDetails" asp-controller="Account" class="btn-gray">Cancel</button>
+                    <button asp-action="UpdateAddress" asp-controller="Account" class="btn-theme">Save Changes</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</sections>

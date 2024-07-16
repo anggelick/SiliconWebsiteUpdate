@@ -1,0 +1,69 @@
+﻿.account-saved-items {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include lg {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: start;
+
+            .account-menu {
+                align-self: start;
+            }
+        }
+
+        .account-courses {
+
+            @include md {
+                max-width: 80%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "header button" "grid grid";
+            }
+
+            @include lg {
+                max-width: 1052px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "header button" "grid grid";
+            }
+
+            h1 {
+                grid-area: header;
+
+                @include md {
+                }
+
+                @include lg {
+                }
+            }
+
+            .btn-delete-all {
+                grid-area: button;
+                width: 147px;
+                align-self: center;
+
+                @include md {
+                }
+
+                @include lg {
+                    justify-self: end;
+                }
+            }
+
+            .grid {
+                @include md {
+                    grid-area: grid;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-content: center;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+}

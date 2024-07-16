@@ -1,0 +1,61 @@
+﻿.course-author {
+
+    .container {
+
+        @include lg {
+            display: flex;
+            height: 568px;
+        }
+
+        .img-div {
+            width: 100%;
+            overflow: hidden;
+
+            @include lg {
+                height: 100%;
+            }
+
+            img {
+                max-width: 100%;
+
+                @include lg {
+                    height: 100%;
+                    width: auto;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .content-box {
+            background-color: $gray-900;
+            padding: 3rem 1rem;
+
+            @include md {
+                padding: 3rem 3rem;
+            }
+
+            @include lg {
+                height: 568px;
+                width: 135%
+            }
+
+            h3 {
+                color: $white;
+            }
+
+            p {
+                color: $gray-600;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                @include md {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}

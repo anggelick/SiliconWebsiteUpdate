@@ -1,0 +1,55 @@
+﻿@model CoursesIndexViewModel
+
+<section class="courses-grid">
+
+    <div class="container">
+
+        <h1>Courses</h1>
+
+        <form method="post" asp-action="Index" asp-controller="Courses">
+            <select asp-for="@Model.CourseCategory" class="view-filter" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                @{
+                    foreach (var category in Model.Categories)
+                    {
+                        <option value="@category.Name" href="@Url.Action("index", new { courseCategory = category.Name } )">@category.Name</option>
+                    }
+                }
+            </select>
+        </form>
+
+        <form method="post" asp-action="Index" asp-controller="Courses">
+            <div class="search-box">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input placeholder="Search" asp-for="@Model.SearchQuery" onchange="this.form.submit()"/>
+            </div>
+        </form>
+
+        <div class="grid">
+            @foreach (var course in Model.Courses)
+            {
+                @await Html.PartialAsync("~/Views/Courses/Components/_CourseBoxPartial.cshtml", course )
+            }
+        </div>
+
+        @{
+            if (Model.Pagination != null && Model.Pagination.TotalPages > 1)
+            {
+                <div class="pagination">
+                    @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
+                    {
+                        if (i == Model.Pagination.CurrentPage)
+                        {
+                            <span class="number active">@i</span>
+                        }
+                        else
+                        {
+                            <a class="number inactive" href="@Url.Action("index", new { pageNumber = i, pageSize = Model.Pagination.PageSize })">@i</a>
+                        }
+                    }
+                </div>
+            }
+        }
+
+    </div>
+</section>

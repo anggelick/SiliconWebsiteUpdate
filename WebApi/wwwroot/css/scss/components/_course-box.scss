@@ -1,0 +1,95 @@
+﻿.course-box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+
+    .save-course-btn {
+        background-color: white;
+        position: absolute;
+        right: 12%;
+        top: 1rem;
+        border-radius: 999px;
+        height: 3rem;
+        width: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            color: $gray-800;
+        }
+
+        &:hover {
+
+            i {
+                color: $theme;
+            }
+        }
+
+
+
+        @include md {
+            right: 10%;
+        }
+
+        @include xl {
+            right: 6%;
+        }
+    }
+
+    .content-box {
+        color: $gray-800;
+        max-width: 416px;
+        height: 473px;
+        border-radius: 0.5rem;
+        @include shadow-s;
+        overflow: hidden;
+
+        .img-div {
+            max-height: 240px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+
+        .text {
+            padding: 20px 20px 0px 20px;
+            height: 170px;
+
+            h2 {
+            }
+
+            .author {
+                color: $gray-700;
+                margin-bottom: 0.5rem;
+            }
+
+            .price {
+                color: $theme;
+            }
+        }
+
+        .bottom {
+            color: $gray-600;
+            padding-top: 1rem;
+            margin: 0 1.5rem;
+            border-top: 1px solid $gray-300;
+            display: flex;
+            gap: 1rem;
+
+            i {
+                margin-right: .25rem;
+            }
+
+            p {
+            }
+        }
+    }
+}

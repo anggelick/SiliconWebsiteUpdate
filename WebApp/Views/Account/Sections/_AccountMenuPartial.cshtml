@@ -1,0 +1,61 @@
+﻿@model AccountViewModel
+
+<div class="account-menu">
+
+    <div class="account-details">
+
+        @if (Model.ProfilePicture.ImageUrl != null)
+        {
+            <div class="img-div">
+                <form asp-action="ChangeProfilePicture" asp-controller="Account" method="post" enctype="multipart/form-data">
+                    <input asp-for=@Model.ProfilePicture.ImageUrl type="file" name="file" onchange="submit()" hidden />
+                    <label asp-for=@Model.ProfilePicture.ImageUrl>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </label>
+
+                    <input asp-for=@Model.FirstName value=@Model.FirstName hidden />
+                    <input asp-for=@Model.LastName value=@Model.LastName hidden />
+                    <input asp-for=@Model.Email value=@Model.Email hidden />
+                </form>
+
+                <img src="/uploads/@Model.ProfilePicture.ImageUrl" alt="" />
+
+            </div>
+        }
+        else
+        {
+            <div class="img-div">
+
+                <form asp-action="ChangeProfilePicture" asp-controller="Account" method="post" enctype="multipart/form-data">
+                    <input asp-for=@Model.ProfilePicture.ImageUrl type="file" name="file" onchange="submit()" hidden  />
+                    <label asp-for=@Model.ProfilePicture.ImageUrl>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </label>
+
+                    <input asp-for=@Model.FirstName value=@Model.FirstName hidden />
+                    <input asp-for=@Model.LastName value=@Model.LastName hidden />
+                    <input asp-for=@Model.Email value=@Model.Email hidden />
+                </form>
+
+                <img src="~/images/icons/no-profile-picture.svg" alt="" />
+            </div>
+        }
+
+        <h5 class="user-name">@Model?.FirstName @Model?.LastName</h5>
+        <p class="user-email">@Model?.Email</p>
+    </div>
+
+    <div class="account-nav">
+
+        <a asp-controller="Account" asp-action="AccountDetails" class="account-nav-link"><i class="fa-solid fa-gear"></i>  Account Details</a>
+        <a asp-controller="Account" asp-action="AccountSecurity" class="account-nav-link"><i class="fa-solid fa-lock"></i> Security</a>
+        <a asp-controller="Account" asp-action="SavedItems" class="account-nav-link"><i class="fa-solid fa-bookmark"></i> Saved Courses</a>
+        <a asp-controller="Auth" asp-action="SignOut" class="account-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+    
+    </div>
+
+</div>
+
+
+
+

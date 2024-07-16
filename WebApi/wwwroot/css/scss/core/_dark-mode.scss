@@ -1,0 +1,94 @@
+﻿
+
+.dark {
+    background-color: $gray-900;
+    color: $white;
+
+    .features, .download-our-app, .newsletter, .contact {
+        background-color: #151822;
+    }
+
+    h1, h2, h3, h4, h5, h6, h7, h8, a, i {
+        color: $white;
+    }
+
+    p, label {
+        color: $gray-600;
+    }
+
+    .btn-gray {
+        background-color: #171b25;
+        color: $gray-400;
+
+        i {
+            color: $gray-400;
+        }
+    }
+
+    input, select, textarea {
+        background-color: #1a1d26;
+        border: 1px solid #43464d;
+        color: $white;
+    }
+
+    .features {
+        .img-div {
+            background-color: #1E212B
+        }
+    }
+
+    .newsletter {
+
+        i {
+            color: #43464d;
+        }
+    }
+
+    .account-menu {
+        border-right: 1px solid $gray-800;
+    }
+
+    #account-details-basic-info-form {
+        border-bottom: 1px solid $gray-800;
+    }
+
+    #contact-form {
+        background-color: $gray-900 !important;
+    }
+
+    .courses-grid, .account-saved-items {
+        .content-box {
+            background-color: #151822;
+        }
+
+        .inactive {
+            color: $white !important;
+        }
+    }
+
+    .work-for-us {
+        .container {
+            background-color: #151822;
+        }
+    }
+
+    .delete-account {
+        p {
+            color: $white !important;
+        }
+    }
+
+    header {
+        #btn-switch {
+            label {
+                color: $gray-500;
+            }
+        }
+    }
+
+    footer {
+        a {
+            background-color: #171b25;
+        }
+    }
+}

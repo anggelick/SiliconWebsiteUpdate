@@ -1,0 +1,34 @@
+﻿
+@model CourseViewModel
+
+
+<section class="course-showcase">
+
+    <img class="background-image" src="@Model.Image.ImageUrl" alt="@Model.Image.AltText" />
+
+    <div class="container">
+
+        <div class="breadcrumbs"></div>
+
+        <div class="details">
+            <div class="tags"></div>
+
+            <h1>@Model.Name</h1>
+            <p>@Model.Ingress</p>
+
+            <div class="reviews">
+                <p><i class="fa-regular fa-thumbs-up"></i> @Model.LikesPercentage % (@Model.LikesAmount K)</p>
+                <p><i class="fa-regular fa-clock"></i> @Model.HoursToComplete hours</p>
+            </div>
+
+        </div>
+
+        <div class="author-thumb">
+            <img class="author-img" src="@Model.CourseAuthor.Image.ImageUrl" />
+            <p>Created by</p>
+            <p>@Model.CourseAuthor.Name</p>
+        </div>
+
+    </div>
+
+</section>

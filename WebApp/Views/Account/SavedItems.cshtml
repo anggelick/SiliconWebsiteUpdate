@@ -1,0 +1,37 @@
+﻿@model AccountViewModel
+
+<section class="account-saved-items">
+
+    <div class="container">
+
+        @await Html.PartialAsync("~/views/account/sections/_AccountMenuPartial.cshtml", Model)
+
+        <div class="account-courses">
+            
+            @if (Model.SavedCourses?.Count == 0 || Model.SavedCourses == null)
+            {
+                <h1>Saved Items</h1>
+            }
+            else
+            {
+                <h1>Saved Items</h1>
+
+                <a class="btn-delete-all" asp-action="RemoveAllCourses" asp-controller="Account">
+                    <i class="fa-regular fa-trash-can"></i> Delete all
+                </a>
+
+                <div class="grid">
+                    @if (Model != null!)
+                    {
+                        foreach (var course in Model.SavedCourses)
+                        {
+                            @await Html.PartialAsync("~/Views/Account/Components/_CourseBoxPartial.cshtml", course)
+                        }
+                    }
+                </div>
+            }
+        </div>
+
+    </div>
+
+</section>

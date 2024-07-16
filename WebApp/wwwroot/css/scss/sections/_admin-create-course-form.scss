@@ -1,0 +1,34 @@
+.create-new-course {
+
+    .container {
+
+        .input-div {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-areas: "label " "input " "span ";
+            max-width: 300px;
+
+            @include md {
+                height: 85px;
+            }
+
+            textarea {
+            }
+
+            span {
+                grid-area: span;
+                text-align: end;
+                height: 26px;
+            }
+
+            input {
+                width: 100%;
+                grid-area: input;
+            }
+
+            label {
+                grid-area: label;
+            }
+        }
+    }
+}

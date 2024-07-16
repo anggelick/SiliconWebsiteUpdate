@@ -1,0 +1,135 @@
+﻿.courses-grid {
+    margin-bottom: 3rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "header header" "dropdown searchbox" "grid grid" "pagination pagination";
+        row-gap: 1rem;
+
+        @include lg {
+            grid-template-columns: 1fr auto auto;
+            grid-template-areas:
+                "header dropdown searchbox" "grid grid grid" "pagination pagination pagination";
+            align-items: center;
+        }
+
+        h1 {
+            grid-area: header;
+
+            @include md {
+                grid-area: header;
+            }
+
+            @include lg {
+                grid-area: header;
+            }
+        }
+
+        .view-filter {
+            grid-area: dropdown;
+            margin-right: 0.5rem;
+            width: 100%;
+
+            @include md {
+                grid-area: dropdown;
+                width: 340px;
+            }
+
+            @include lg {
+                grid-area: dropdown;
+                width: 240px;
+            }
+        }
+
+        .search-box {
+            position: relative;
+            grid-area: searchbox;
+            padding: 0 0;
+            margin: 0 0;
+            width: 100%;
+
+            @include md {
+                width: 340px;
+            }
+
+            input {
+                width: 98%;
+                margin-left: 0.5rem;
+
+                @include lg {
+                    width: 240px;
+                }
+            }
+
+            button {
+                position: absolute;
+                top: 13px;
+                right: 1.3rem;
+                border: none;
+                background-color: transparent;
+                margin: 0;
+                padding: 0 0;
+
+                i {
+                    color: $gray-800;
+                }
+            }
+
+            @include lg {
+                grid-area: searchbox;
+            }
+        }
+
+        .grid {
+            grid-area: grid;
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 1rem;
+            column-gap: 1rem;
+
+            @include md {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include xl {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .pagination {
+            grid-area: pagination;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-size: 20px;
+            margin-bottom: 3rem;
+            margin-top: 1rem;
+
+            span {
+                background-color: $gray-100;
+                color: $black;
+            }
+
+            a {
+                color: $black;
+
+                &:hover {
+                    background-color: $theme;
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
+
+            a, span {
+                line-height: 36px;
+                height: 36px;
+                width: 36px;
+                text-align: center;
+                border-radius: 5px;
+            }
+        }
+    }
+}
